@@ -5,15 +5,14 @@ public class CopyServicesTester {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String value;
+        String value1;
         do {
             System.out.println("Select an Option:");
             System.out.println("1. Print Service");
             System.out.println("2. Account Summary");
-            System.out.println("3. Delete Contact");
-            System.out.println("4. Exit");
-            value = in.next();
-            switch (value) {
+            System.out.println("3. Exit");
+            value1 = in.next();
+            switch (value1) {
                 case "1":
                     System.out.println("How many bw pages?");
                     int bw = in.nextInt();
@@ -23,18 +22,37 @@ public class CopyServicesTester {
                     System.out.println(print.paperPrinter());
                     break;
                 case "2":
-                    System.out.println("Account Summary:");
-                    break;
+                    String value2;
+                    do {
+                        System.out.println("Select an Option:");
+                        System.out.println("1. View Account Balance");
+                        System.out.println("2. Pay Balance");
+                        System.out.println("3. Exit");
+                        value2 = in.next();
+                        switch (value2) {
+                            case "1":
+                                System.out.println("How many days overdue?");
+                                int daysPastDue = in.nextInt();
+                                AccountBalance acc1 = new AccountBalance(daysPastDue);
+                                System.out.println(acc1.getBalance());
+                                break;
+                            case "2":
+                                System.out.println("Bill Paid");
+                                break;
+                            case "3":
+                                System.out.println("Good Bye");
+                                break;
+                            default:
+                                System.out.println("Invalid Option");
+                        }
+                    } while (!value2.equals("3"));
                 case "3":
-                    System.out.println("Contact Deleted");
-                    break;
-                case "4":
                     System.out.println("Good Bye");
                     break;
                 default:
                     System.out.println("Invalid Option");
             }
-        } while (!value.equals("4"));
-    }
 
+        } while (!value1.equals("3"));
+    }
 }
