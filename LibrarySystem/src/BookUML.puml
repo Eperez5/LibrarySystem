@@ -1,0 +1,25 @@
+@startuml
+class Book{
+-String title
+-String author
+-String genre
+-boolean available
+-String dueDate
+
++Book()
++Book(String title,String author,String genre,boolean Available,String dueDate)
++void setTitle(String title)
++void setAuthor(String author)
++void setGenre(String genre)
++void setAvailable(boolean available)
++void setDueDate(String date)
++String getTitle()
++String getAuthor()
++String getGenre()
++boolean getAvailable()
++String getDueDate()
++String toString()
+}
+
+
+@enduml

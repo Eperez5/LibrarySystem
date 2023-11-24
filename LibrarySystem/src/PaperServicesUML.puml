@@ -1,0 +1,11 @@
+@startuml
+class PaperServices{
+-int bwPages
+-int colorPages
+
++AccountBalance(int bwPages,int colorPages)
++double paperPrinter()
+}
+
+
+@enduml
