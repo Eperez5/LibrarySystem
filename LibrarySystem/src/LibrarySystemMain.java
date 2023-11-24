@@ -19,17 +19,29 @@ public class LibrarySystemMain {
         Scanner in = new Scanner(System.in);
         String value1;
         do {
+            System.out.println("Welcome to the Library Management System interface!");
+            System.out.println();
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println();
             System.out.println("Select an Option:");
+            System.out.println();
             System.out.println("1. Librarian Menu");
             System.out.println("2. Student Menu");
             System.out.println("3. Exit");
             value1 = in.next();
             in.nextLine();
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println();
             switch (value1) {
                 case "1":
                     String value2;
                     do {
+                        System.out.println("You have entered the Librarian Menu");
+                        System.out.println();
+                        System.out.println("-----------------------------------------------------------------");
+                        System.out.println();
                         System.out.println("Select an Option:");
+                        System.out.println();
                         System.out.println("1. Add Book");
                         System.out.println("2. Modify Book Details");
                         System.out.println("3. Remove Book");
@@ -118,7 +130,12 @@ public class LibrarySystemMain {
                 case "2":
                     String value5;
                     do {
+                        System.out.println("You have entered the student's Menu");
+                        System.out.println();
+                        System.out.println("-----------------------------------------------------------------");
+                        System.out.println();
                         System.out.println("Select an Option:");
+                        System.out.println();
                         System.out.println("1. Library");
                         System.out.println("2. Paper Service");
                         System.out.println("3. Account Summary");
@@ -129,6 +146,7 @@ public class LibrarySystemMain {
                                 String value6;
                                 do {
                                     System.out.println("Select an Option:");
+                                    System.out.println();
                                     System.out.println("1. View All Books");
                                     System.out.println("2. Check Out Book");
                                     System.out.println("3. Back");
@@ -154,6 +172,9 @@ public class LibrarySystemMain {
                                 break;
 
                             case "2":
+                                System.out.println("You have entered the Library Printing Service:");
+                                System.out.println();
+                                System.out.println("-----------------------------------------------------------------");
                                 System.out.println("How many bw pages?");
                                 int bw = in.nextInt();
                                 System.out.println("How many color pages?");
@@ -164,6 +185,9 @@ public class LibrarySystemMain {
                             case "3":
                                 String value8;
                                 do {
+                                    System.out.println("You have entered the Account Summary:");
+                                    System.out.println();
+                                    System.out.println("-----------------------------------------------------------------");
                                     System.out.println("Select an Option:");
                                     System.out.println("1. View Account Balance");
                                     System.out.println("2. Pay Balance");
