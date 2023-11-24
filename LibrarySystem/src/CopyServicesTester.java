@@ -49,6 +49,7 @@ public class CopyServicesTester {
                                 System.out.println("Invalid Option");
                         }
                     } while (!value2.equals("3"));
+                    break;
                 case "3":
                     System.out.println("erp");
                     break;

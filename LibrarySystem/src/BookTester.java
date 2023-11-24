@@ -22,7 +22,7 @@ public class BookTester {
         
         System.out.println("");
         
-        Book book2 = new Book ("Portrait", "John Low", "Biography", false);
+        Book book2 = new Book ("Portrait", "John Low", "Biography", false,"");
         System.out.println("Title: " + book2.getTitle());
         System.out.println("Author: " + book2.getAuthor());
         System.out.println("Genre: " + book2.getGenre());

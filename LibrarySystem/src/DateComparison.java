@@ -21,5 +21,10 @@ public class DateComparison {
         d1 = LocalDate.now();
         ndays = d1.datesUntil(d2).count();
         System.out.println(ndays);
+        
+        d1 = LocalDate.now().plusDays(10);
+        System.out.println(d1);
+        System.out.println(d2);
+        
     }
 }
