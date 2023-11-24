@@ -73,5 +73,14 @@ public class Student {
         this.major = major;
     }
     
+    /**
+     * Return the student details formatted.
+     *
+     * @return The student first name, last name, and major.
+     */
+    public String toString(){
+        return "First Name: " + this.firstname + " Last Name: " + this.lastname + " Major: " + this.major;
+    }
+    
 }
        

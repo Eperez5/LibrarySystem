@@ -11,6 +11,10 @@ public class LibrarySystemMain {
         ArrayList<Book> books = new ArrayList<>();
         AccountBalance acc1 = new AccountBalance();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        ArrayList<Student> s1 = new ArrayList<>();
+        s1.add(new Student("Joyce", "Collins", "Math"));
+        s1.add(new Student("James", "Johns", "Computer Science"));
+        books.add(new Book("Calculus","Isaac Newton","Textbook",true,"n/a"));
 
         Scanner in = new Scanner(System.in);
         String value1;
@@ -30,7 +34,11 @@ public class LibrarySystemMain {
                         System.out.println("2. Modify Book Details");
                         System.out.println("3. Remove Book");
                         System.out.println("4. View All Books");
-                        System.out.println("5. Back");
+                        System.out.println("5. Add Student");
+                        System.out.println("6. Modify Student");
+                        System.out.println("7. Remove Student");
+                        System.out.println("8. View All Student");
+                        System.out.println("9. Back");
                         value2 = in.next();
                         in.nextLine();
                         switch (value2) {
@@ -70,31 +78,62 @@ public class LibrarySystemMain {
                                 }
                                 break;
                             case "5":
+                                System.out.println("What is the student's First Name?");
+                                String firstname = in.nextLine();
+                                System.out.println("What is the student's Last Name?");
+                                String lastname = in.nextLine();
+                                System.out.println("What is the student's major?");
+                                String major = in.nextLine();
+                                s1.add(new Student(firstname, lastname, major));
+                                break;
+                            case "6":
+                                System.out.println("Update Which Student?");
+                                int value4 = in.nextInt() - 1;
+                                in.nextLine();
+                                System.out.println("What is the student's First Name?");
+                                firstname = in.nextLine();
+                                System.out.println("What is the Student's Last Name?");
+                                lastname = in.nextLine();
+                                System.out.println("What is the Student's major?");
+                                major = in.nextLine();
+                                s1.set(value4, new Student(firstname, lastname, major));
+                                System.out.println("Student Updated");
+                                break;
+                            case "7":
+                                System.out.println("Remove Which Student? ");
+                                s1.remove(in.nextInt() - 1);
+                                break;
+                            case "8":
+                                for (Student b : s1) {
+                                    System.out.println(b);
+                                }
+                                break;
+                            case "9":
                                 break;
                             default:
                                 System.out.println("Invalid Option");
                         }
-                    } while (!value2.equals("5"));
+                    } while (!value2.equals("9"));
                     break;
                 case "2":
-                    String value4;
+                    String value5;
                     do {
                         System.out.println("Select an Option:");
                         System.out.println("1. Library");
                         System.out.println("2. Paper Service");
                         System.out.println("3. Account Summary");
                         System.out.println("4. Back");
-                        value4 = in.next();
-                        switch (value4) {
+                        value5 = in.next();
+                        switch (value5) {
                             case "1":
-                                String value5;
+                                String value6;
                                 do {
                                     System.out.println("Select an Option:");
                                     System.out.println("1. View All Books");
                                     System.out.println("2. Check Out Book");
                                     System.out.println("3. Back");
-                                    value5 = in.next();
-                                    switch (value5) {
+                                    value6 = in.next();
+                                    switch (value6) {
                                         case "1":
                                             for (Book b : books) {
                                                 System.out.println(b);
@@ -102,16 +141,16 @@ public class LibrarySystemMain {
                                             break;
                                         case "2":
                                             System.out.println("Which Book to Check Out:");
-                                            int value6=in.nextInt()-1;
-                                            books.get(value6).setDueDate(LocalDate.now().plusDays(10).format(dtf));
-                                            books.get(value6).setAvailable(false);
+                                            int value7 = in.nextInt() - 1;
+                                            books.get(value7).setDueDate(LocalDate.now().plusDays(10).format(dtf));
+                                            books.get(value7).setAvailable(false);
                                             break;
                                         case "3":
                                             break;
                                         default:
                                             System.out.println("Invalid Option");
                                     }
-                                } while (!value5.equals("3"));
+                                } while (!value6.equals("3"));
                                 break;
 
                             case "2":
@@ -123,14 +162,14 @@ public class LibrarySystemMain {
                                 System.out.println(print.paperPrinter());
                                 break;
                             case "3":
-                                String value7;
+                                String value8;
                                 do {
                                     System.out.println("Select an Option:");
                                     System.out.println("1. View Account Balance");
                                     System.out.println("2. Pay Balance");
                                     System.out.println("3. Back");
-                                    value7 = in.next();
-                                    switch (value7) {
+                                    value8 = in.next();
+                                    switch (value8) {
                                         case "1":
                                             System.out.println("How many days overdue?");
                                             int daysPastDue = in.nextInt();
@@ -148,14 +187,14 @@ public class LibrarySystemMain {
                                         default:
                                             System.out.println("Invalid Option");
                                     }
-                                } while (!value7.equals("3"));
+                                } while (!value8.equals("3"));
                                 break;
                             case "4":
                                 break;
                             default:
                                 System.out.println("Invalid Option");
                         }
-                    } while (!value4.equals("4"));
+                    } while (!value5.equals("4"));
                     break;
                 case "3":
                     System.out.println("Good-Bye");
