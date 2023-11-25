@@ -14,7 +14,10 @@ public class LibrarySystemMain {
         ArrayList<Student> s1 = new ArrayList<>();
         s1.add(new Student("Joyce", "Collins", "Math"));
         s1.add(new Student("James", "Johns", "Computer Science"));
-        books.add(new Book("Calculus", "Isaac Newton", "Textbook", true, "n/a"));
+        s1.add(new Student("Lily", "Steven", "Engineer"));
+        books.add(new Book("Calculus","Isaac Newton","Textbook",true,"n/a"));
+        books.add(new Book("The picture of Dorian Gray","Oscar Wild","Gothic Fiction",true,"n/a"));
+        books.add(new Book("The Great Gatsby","F. Scott Fitzgerald","fiction",true,"n/a"));
 
         Scanner in = new Scanner(System.in);
         String value1;
