@@ -1,0 +1,12 @@
+@startuml
+class LibrarySystem{
+-String bookTitle
+-LocalDate dueDate
+
++LibrarySystem(String bookTitle,LocalDate dueDate)
++void checkIn()
++void checkOut(int dueDays)
+}
+
+
+@enduml

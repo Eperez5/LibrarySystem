@@ -1,0 +1,80 @@
+@startuml
+
+interface LibrarySystemMain
+
+LibrarySystemMain--PaperServices
+LibrarySystemMain--CheckInCheckOut
+LibrarySystemMain--Book
+LibrarySystemMain--Student
+LibrarySystemMain--AccountBalance
+
+class PaperServices{
+-int bwPages
+-int colorPages
+
++AccountBalance(int bwPages,int colorPages)
++double paperPrinter()
+}
+
+class CheckInCheckOut{
+-String bookTitle
+-LocalDate dueDate
+
++LibrarySystem(String bookTitle,LocalDate dueDate)
++void checkIn()
++void checkOut(int dueDays)
+}
+
+class Book{
+-String title
+-String author
+-String genre
+-boolean available
+-String dueDate
+
++Book()
++Book(String title,String author,String genre,boolean Available,String dueDate)
++void setTitle(String title)
++void setAuthor(String author)
++void setGenre(String genre)
++void setAvailable(boolean available)
++void setDueDate(String date)
++String getTitle()
++String getAuthor()
++String getGenre()
++boolean getAvailable()
++String getDueDate()
++String toString()
+}
+
+class AccountBalance{
+-double OVERDUE_FEE
+-int daysPastDue
+-double bill
+-double change
+
++AccountBalance()
++AccountBalance(int daysPastDue)
++void setDaysPastDue(int daysPastDue)
++double getOverDueBookBalance()
++double payBalance(double payment)
++double giveChange()
+}
+
+class Student{
+-String firstName
+-String lastName
+-String major
+
++Student()
++Student(String firstName,String lastName,String major)
++String getFirstName()
++void setFirstName(String firstName)
++String getLastName()
++void setLastName(String lastName)
++String getMajor()
++void setMajor(String major)
++String toString()
+}
+
+@enduml

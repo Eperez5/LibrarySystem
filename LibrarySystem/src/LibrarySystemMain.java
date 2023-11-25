@@ -14,7 +14,7 @@ public class LibrarySystemMain {
         ArrayList<Student> s1 = new ArrayList<>();
         s1.add(new Student("Joyce", "Collins", "Math"));
         s1.add(new Student("James", "Johns", "Computer Science"));
-        books.add(new Book("Calculus","Isaac Newton","Textbook",true,"n/a"));
+        books.add(new Book("Calculus", "Isaac Newton", "Textbook", true, "n/a"));
 
         Scanner in = new Scanner(System.in);
         String value1;
@@ -149,7 +149,8 @@ public class LibrarySystemMain {
                                     System.out.println();
                                     System.out.println("1. View All Books");
                                     System.out.println("2. Check Out Book");
-                                    System.out.println("3. Back");
+                                    System.out.println("3. Check In Book");
+                                    System.out.println("4. Back");
                                     value6 = in.next();
                                     switch (value6) {
                                         case "1":
@@ -162,13 +163,20 @@ public class LibrarySystemMain {
                                             int value7 = in.nextInt() - 1;
                                             books.get(value7).setDueDate(LocalDate.now().plusDays(10).format(dtf));
                                             books.get(value7).setAvailable(false);
+                                            System.out.println("Due Date is: " + books.get(value7).getDueDate());
                                             break;
                                         case "3":
+                                            System.out.println("Which Book to Check In:");
+                                            int value8 = in.nextInt() - 1;
+                                            books.get(value8).setDueDate("n/a");
+                                            books.get(value8).setAvailable(true);
+                                            System.out.println("Book Returned");
+                                        case "4":
                                             break;
                                         default:
                                             System.out.println("Invalid Option");
                                     }
-                                } while (!value6.equals("3"));
+                                } while (!value6.equals("4"));
                                 break;
 
                             case "2":
@@ -183,7 +191,7 @@ public class LibrarySystemMain {
                                 System.out.println(print.paperPrinter());
                                 break;
                             case "3":
-                                String value8;
+                                String value9;
                                 do {
                                     System.out.println("You have entered the Account Summary:");
                                     System.out.println();
@@ -192,8 +200,8 @@ public class LibrarySystemMain {
                                     System.out.println("1. View Account Balance");
                                     System.out.println("2. Pay Balance");
                                     System.out.println("3. Back");
-                                    value8 = in.next();
-                                    switch (value8) {
+                                    value9 = in.next();
+                                    switch (value9) {
                                         case "1":
                                             System.out.println("How many days overdue?");
                                             int daysPastDue = in.nextInt();
@@ -211,7 +219,7 @@ public class LibrarySystemMain {
                                         default:
                                             System.out.println("Invalid Option");
                                     }
-                                } while (!value8.equals("3"));
+                                } while (!value9.equals("3"));
                                 break;
                             case "4":
                                 break;

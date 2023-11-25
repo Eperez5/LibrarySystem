@@ -1,5 +1,5 @@
 @startuml
-class PaperServices{
+class AccountBalance{
 -double OVERDUE_FEE
 -int daysPastDue
 -double bill
